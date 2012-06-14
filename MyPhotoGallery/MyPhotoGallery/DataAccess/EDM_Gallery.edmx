@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GalleryModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="GalleryModelStoreContainer">
+          <EntitySet Name="Comments" EntityType="GalleryModel.Store.Comments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Photos" EntityType="GalleryModel.Store.Photos" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Comments_Photos" Association="GalleryModel.Store.FK_Comments_Photos">
+            <End Role="Photos" EntitySet="Photos" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Comments">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="photoId" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar(max)" Nullable="false" />
+          <Property Name="text" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Photos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="postingDate" Type="datetime" Nullable="false" />
+          <Property Name="title" Type="varchar(max)" Nullable="false" />
+          <Property Name="fileName" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Comments_Photos">
+          <End Role="Photos" Type="GalleryModel.Store.Photos" Multiplicity="1" />
+          <End Role="Comments" Type="GalleryModel.Store.Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Photos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="photoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GalleryModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="GalleryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Comments" EntityType="GalleryModel.Comments" />
+          <EntitySet Name="Photos" EntityType="GalleryModel.Photos" />
+          <AssociationSet Name="FK_Comments_Photos" Association="GalleryModel.FK_Comments_Photos">
+            <End Role="Photos" EntitySet="Photos" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Comments">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="photoId" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="text" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Photos" Relationship="GalleryModel.FK_Comments_Photos" FromRole="Comments" ToRole="Photos" />
+        </EntityType>
+        <EntityType Name="Photos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="postingDate" Nullable="false" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="fileName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Comments" Relationship="GalleryModel.FK_Comments_Photos" FromRole="Photos" ToRole="Comments" />
+        </EntityType>
+        <Association Name="FK_Comments_Photos">
+          <End Type="GalleryModel.Photos" Role="Photos" Multiplicity="1" />
+          <End Type="GalleryModel.Comments" Role="Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Photos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="photoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GalleryModelStoreContainer" CdmEntityContainer="GalleryEntities">
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="GalleryModel.Comments">
+              <MappingFragment StoreEntitySet="Comments">
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="photoId" ColumnName="photoId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Photos">
+            <EntityTypeMapping TypeName="GalleryModel.Photos">
+              <MappingFragment StoreEntitySet="Photos">
+                <ScalarProperty Name="fileName" ColumnName="fileName" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="postingDate" ColumnName="postingDate" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="EDM_Gallery">
+        <EntityTypeShape EntityType="GalleryModel.Comments" Width="1.5" PointX="3" PointY="0.875" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="GalleryModel.Photos" Width="1.5" PointX="0.75" PointY="0.875" Height="1.9802864583333335" />
+        <AssociationConnector Association="GalleryModel.FK_Comments_Photos" >
+          <ConnectorPoint PointX="2.25" PointY="1.8651432291666668" />
+          <ConnectorPoint PointX="3" PointY="1.8651432291666668" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

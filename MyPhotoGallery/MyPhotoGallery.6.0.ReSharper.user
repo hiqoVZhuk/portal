@@ -1,0 +1,53 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/d:DataAccess/f:EDM_Gallery.edmx" caret="7909" fromTop="17" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/d:DataAccess/f:EDM_Gallery.Designer.cs" caret="1512" fromTop="17" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:Web.config" caret="2543" fromTop="7" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:Global.asax.cs" caret="1128" fromTop="22" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:Default.aspx.designer.cs" caret="0" fromTop="0" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:PhotoDetails.aspx.cs" caret="1158" fromTop="25" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:Site.Master.cs" caret="317" fromTop="12" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/d:Scripts/f:jquery.thumbs.js" caret="534" fromTop="0" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/d:DataAccess/f:EDM_Gallery.edmx.sql" caret="468" fromTop="10" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:Default.aspx" caret="2426" fromTop="5" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:Error.aspx" caret="0" fromTop="0" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:PhotoDetails.aspx" caret="1005" fromTop="0" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:Site.Master" caret="1944" fromTop="46" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:Site.Master.designer.cs" caret="594" fromTop="0" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:Default.aspx.cs" caret="406" fromTop="16" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:Web.config" caret="2543" fromTop="7" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:Default.aspx" caret="3192" fromTop="5" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/d:DataAccess/f:EDM_Gallery.edmx.sql" caret="36" fromTop="10" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:PhotoDetails.aspx.cs" caret="1155" fromTop="17" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:PhotoDetails.aspx.cs" caret="1158" fromTop="25" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:Global.asax.cs" caret="658" fromTop="13" />
+      <File id="3A7B20CA-A90A-4F47-B666-818D5A8AEACE/f:Global.asax.cs" caret="1118" fromTop="21" />
+    </RecentEdits>
+  </RecentFiles>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="using" priority="31" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>
